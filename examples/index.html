@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>React Boxplot Example</title>
+
+    <script src="../node_modules/react/dist/react.js"></script>
+    <script src="../node_modules/underscore/underscore.js"></script>
+    <script src="../node_modules/simple-statistics/src/simple_statistics.js"></script>
+    <script src="../dist/boxplot.js"></script>
+    <script src="../dist/stats.js"></script>
+
+    <style>
+    </style>
+</head>
+<body>
+
+  <div id="chart1"></div>
+  <div id="chart2"></div>
+  <div id="chart3"></div>
+  <div id="chart4"></div>
+
+  <script>
+
+  React.render(
+      React.createElement(Boxplot, {
+          width: 400,
+          height: 25,
+          orientation: 'horizontal',
+          min: 0,
+          max: 300,
+          stats: {
+              whiskerLow: 194.3,
+              quartile1: 201,
+              quartile2: 234.5,
+              quartile3: 254.6,
+              whiskerHigh: 257.95,
+              outliers: [ 50, 75, 184.25, 268, 290 ],
+          },
+      }),
+      document.getElementById('chart1')
+  );
+
+  React.render(
+      React.createElement(Boxplot, {
+          width: 600,
+          height: 25,
+          orientation: 'horizontal',
+          min: 0,
+          max: 300,
+          stats: {
+              whiskerLow: 194.3,
+              quartile1: 201,
+              quartile2: 234.5,
+              quartile3: 254.6,
+              whiskerHigh: 257.95,
+              outliers: [ 50, 75, 184.25, 268, 290 ],
+          },
+      }),
+      document.getElementById('chart2')
+  );
+
+  React.render(
+      React.createElement(Boxplot, {
+          width: 900,
+          height: 25,
+          orientation: 'horizontal',
+          min: 0,
+          max: 300,
+          stats: {
+              whiskerLow: 194.3,
+              quartile1: 201,
+              quartile2: 234.5,
+              quartile3: 254.6,
+              whiskerHigh: 257.95,
+              outliers: [ 50, 75, 184.25, 268, 290 ],
+          },
+      }),
+      document.getElementById('chart3')
+  );
+
+  var data = '14 15 16 16 17 17 17 17 17 18 18 18 18 18 18 19 19 19 20 20 20 20 20 20 21 21 22 23 24 24 29'.split(' ');
+  data = _(data).map(function (d) { return parseInt(d, 10); });
+
+  var stats = computeBoxplotStats(data);
+
+  React.render(
+      React.createElement(Boxplot, {
+          width: 400,
+          height: 25,
+          orientation: 'horizontal',
+          min: 0,
+          max: 30,
+          stats: stats,
+      }),
+      document.getElementById('chart4')
+  );
+
+  </script>
+  
+</body>
+</html>

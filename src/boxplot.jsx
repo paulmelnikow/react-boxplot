@@ -89,7 +89,7 @@
 
                 // Coordinate system: +y at the top, +x to the right.
                 transform =
-                    'translate (-' + this.props.min + ', 0) ' +
+                    'translate (' + -this.props.min + ', 0) ' +
                     'translate (0, ' + this.props.height + ') ' +
                     'scale(1, -' + scaleFactor + ')';
             } else {
@@ -99,7 +99,7 @@
 
                 // Coordinate system: +y at the right, +x to the top.
                 transform =
-                    'translate (-' + this.props.min + ', 0) ' +
+                    'translate (' + -this.props.min + ', 0) ' +
                     'scale(' + scaleFactor + ', 1) ' +
                     'translate (0, ' + this.props.height + ') ' +
                     'rotate(-90)';

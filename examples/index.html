@@ -17,6 +17,7 @@
 <body>
 
   <div id="chart1"></div>
+  <div id="chart1a"></div>
   <div id="chart2"></div>
   <div id="chart3"></div>
   <div id="chart4"></div>
@@ -40,6 +41,25 @@
           },
       }),
       document.getElementById('chart1')
+  );
+
+  React.render(
+      React.createElement(Boxplot, {
+          width: 400,
+          height: 25,
+          orientation: 'horizontal',
+          min: -100,
+          max: 300,
+          stats: {
+              whiskerLow: 194.3,
+              quartile1: 201,
+              quartile2: 234.5,
+              quartile3: 254.6,
+              whiskerHigh: 257.95,
+              outliers: [ -80, -20, 50, 75, 184.25, 268, 290 ],
+          },
+      }),
+      document.getElementById('chart1a')
   );
 
   React.render(

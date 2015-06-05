@@ -4,20 +4,20 @@
     } else if (typeof exports === 'object') {
         module.exports = factory(require('underscore'), require('simple-statistics'));
     } else {
-        root.computeBoxplotStats = factory(root._, root.ss);
+        root.computeBoxplotStats = factory(root._, root.simpleStatistics);
     }
-}(this, function (_, ss) {
+}(this, function (_, simpleStatistics) {
 
     var computeBoxplotStats = function (data) {
 
-        var quartile2 = ss.median(data);
+        var median = simpleStatistics.median(data);
 
-        var quartile1 = ss.quantile(data, 0.25),
-            quartile3 = ss.quantile(data, 0.75),
-            interQuartileRange = quartile3 - quartile1;
+        var lowerQuartile = simpleStatistics.quantile(data, 0.25),
+            upperQuartile = simpleStatistics.quantile(data, 0.75),
+            interQuartileRange = upperQuartile - lowerQuartile;
 
-        var lowerOutlierCutoff = quartile1 - 1.5 * interQuartileRange,
-            upperOutlierCutoff = quartile3 + 1.5 * interQuartileRange;
+        var lowerOutlierCutoff = lowerQuartile - 1.5 * interQuartileRange,
+            upperOutlierCutoff = upperQuartile + 1.5 * interQuartileRange;
 
         var outliers = [], nonOutliers = [];
         _(data).each(function (datum) {
@@ -28,15 +28,15 @@
             }
         });
 
-        var whiskerLow = ss.min(nonOutliers),
-            whiskerHigh = ss.max(nonOutliers);
+        var minimum = simpleStatistics.min(nonOutliers),
+            maximum = simpleStatistics.max(nonOutliers);
 
         return {
-            whiskerLow: whiskerLow,
-            quartile1: quartile1,
-            quartile2: quartile2,
-            quartile3: quartile3,
-            whiskerHigh: whiskerHigh,
+            minimum: minimum,
+            lowerQuartile: lowerQuartile,
+            median: median,
+            upperQuartile: upperQuartile,
+            maximum: maximum,
             outliers: outliers,
         };
     };

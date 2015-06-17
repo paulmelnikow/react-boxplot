@@ -101,8 +101,8 @@
 
                 // Coordinate system: +y at the right, +x to the top.
                 transform =
-                    'translate (' + -this.props.min + ', 0) ' +
                     'scale(' + horizScaleFactor + ', 1) ' +
+                    'translate (' + -this.props.min + ', 0) ' +
                     'translate (0, ' + this.props.height + ') ' +
                     'rotate(-90)';
             }

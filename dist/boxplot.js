@@ -81,26 +81,28 @@
             var component = this,
                 stats = this.props.stats;
 
-            var xMax, scaleFactor, transform;
+            var xMax, horizScaleFactor, vertScaleFactor, transform;
             if (this.props.orientation == 'vertical') {
                 xMax = this.props.width;
 
-                scaleFactor = this.props.height / (this.props.max - this.props.min);
+                vertScaleFactor = this.props.height / (this.props.max - this.props.min);
+                horizScaleFactor = 1.0;
 
                 // Coordinate system: +y at the top, +x to the right.
                 transform =
                     'translate (' + -this.props.min + ', 0) ' +
                     'translate (0, ' + this.props.height + ') ' +
-                    'scale(1, -' + scaleFactor + ')';
+                    'scale(1, -' + vertScaleFactor + ')';
             } else {
                 xMax = this.props.height;
 
-                scaleFactor = this.props.width / (this.props.max - this.props.min);
+                horizScaleFactor = this.props.width / (this.props.max - this.props.min);
+                vertScaleFactor = 1.0;
 
                 // Coordinate system: +y at the right, +x to the top.
                 transform =
                     'translate (' + -this.props.min + ', 0) ' +
-                    'scale(' + scaleFactor + ', 1) ' +
+                    'scale(' + horizScaleFactor + ', 1) ' +
                     'translate (0, ' + this.props.height + ') ' +
                     'rotate(-90)';
             }
@@ -115,13 +117,13 @@
                             key: "tick-low", 
                             x1:  xMin, x2:  xMax, 
                             y1:  stats.whiskerLow, y2:  stats.whiskerLow, 
-                            strokeWidth:  this.props.whiskerStrokeWidth / scaleFactor, 
+                            strokeWidth:  this.props.whiskerStrokeWidth / horizScaleFactor, 
                             style:  this.props.tickStyle}), 
                         React.createElement("line", {
                             key: "whisker-low", 
                             x1:  xCenter, x2:  xCenter, 
                             y1:  stats.whiskerLow, y2:  stats.quartile1, 
-                            strokeWidth:  this.props.whiskerStrokeWidth / scaleFactor, 
+                            strokeWidth:  this.props.whiskerStrokeWidth / vertScaleFactor, 
                             style:  this.props.whiskerStyle}), 
                         React.createElement("rect", {
                             key: "box", 
@@ -134,19 +136,19 @@
                             key: "median", 
                             x1:  xMin, x2:  xMax, 
                             y1:  stats.quartile2, y2:  stats.quartile2, 
-                            strokeWidth:  this.props.medianStrokeWidth / scaleFactor, 
+                            strokeWidth:  this.props.medianStrokeWidth / horizScaleFactor, 
                             style:  this.props.medianStyle}), 
                         React.createElement("line", {
                             key: "whisker-high", 
                             x1:  xCenter, x2:  xCenter, 
                             y1:  stats.whiskerHigh, y2:  stats.quartile3, 
-                            strokeWidth:  this.props.whiskerStrokeWidth / scaleFactor, 
+                            strokeWidth:  this.props.whiskerStrokeWidth / vertScaleFactor, 
                             style:  this.props.whiskerStyle}), 
                         React.createElement("line", {
                             key: "tick-high", 
                             x1:  xMin, x2:  xMax, 
                             y1:  stats.whiskerHigh, y2:  stats.whiskerHigh, 
-                            strokeWidth:  this.props.whiskerStrokeWidth / scaleFactor, 
+                            strokeWidth:  this.props.whiskerStrokeWidth / horizScaleFactor, 
                             style:  this.props.tickStyle}), 
                         
                             _(stats.outliers).map(function (outlier, index) {
@@ -154,8 +156,8 @@
                                     React.createElement("ellipse", {
                                         key:  'outlier-' + index, 
                                         cx:  xCenter, cy:  outlier, 
-                                        rx:  component.props.outlierRadius, 
-                                        ry:  component.props.outlierRadius / scaleFactor, 
+                                        rx:  component.props.outlierRadius / vertScaleFactor, 
+                                        ry:  component.props.outlierRadius / horizScaleFactor, 
                                         strokeWidth: "0", 
                                         style:  component.props.outlierStyle})
                                 );

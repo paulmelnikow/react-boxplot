@@ -1,11 +1,14 @@
 {
   "name": "react-boxplot",
-  "version": "0.1.0",
+  "version": "0.3.1",
   "description": "Simple SVG box plots in React",
   "main": "dist/boxplot.js",
   "repository": "https://www.github.com/bodylabs/react-boxplot",
+  "homepage": "http://github.com/bodylabs/react-boxplot",
+  "bugs": "https://www.github.com/bodylabs/react-boxplot/issues",
   "author": "Paul Melnikow <paul.melnikow@bodylabs.com>",
   "license": "BSD",
+  "keywords": ["react", "chart", "boxplot", "svg"],
   "scripts": {
     "build": "jsx --extension jsx src/ dist/",
     "watch": "jsx --extension jsx --watch src/ dist/",

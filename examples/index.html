@@ -16,169 +16,133 @@
 </head>
 <body>
 
-  <div id="chart1"></div>
-  <div id="chart1a"></div>
-  <div id="chart1b"></div>
-  <div id="chart1c"></div>
-  <div id="chart1d"></div>
-  <div id="chart2"></div>
-  <div id="chart3"></div>
-  <div id="chart4"></div>
-  <div id="chart5"></div>
+    <script>
 
-  <script>
+    var plotAttrs = [{
+        width: 400,
+        height: 25,
+        orientation: 'horizontal',
+        min: 0,
+        max: 300,
+        stats: {
+            whiskerLow: 194.3,
+            quartile1: 201,
+            quartile2: 234.5,
+            quartile3: 254.6,
+            whiskerHigh: 257.95,
+            outliers: [ 50, 75, 184.25, 268, 290 ],
+        },
+    },
+    {
+        width: 400,
+        height: 25,
+        orientation: 'horizontal',
+        min: -150,
+        max: 150,
+        stats: {
+            whiskerLow: 44.3,
+            quartile1: 51,
+            quartile2: 84.5,
+            quartile3: 104.6,
+            whiskerHigh: 107.95,
+            outliers: [ -100, -75, 34.25, 118, 140 ],
+        },
+    },
+    {
+        width: 400,
+        height: 25,
+        orientation: 'horizontal',
+        min: 0,
+        max: 3000,
+        stats: {
+            whiskerLow: 1943,
+            quartile1: 2010,
+            quartile2: 2345.,
+            quartile3: 2546.,
+            whiskerHigh: 2579.5,
+            outliers: [ 500, 750, 1842.5, 2680, 2900 ],
+        },
+    },
+    {
+        width: 400,
+        height: 25,
+        orientation: 'horizontal',
+        min: 0,
+        max: 30,
+        stats: {
+            whiskerLow: 19.43,
+            quartile1: 20.1,
+            quartile2: 23.45,
+            quartile3: 25.46,
+            whiskerHigh: 25.795,
+            outliers: [ 5, 7.5, 18.425, 26.8, 29 ],
+        },
+    },
+    {
+        width: 400,
+        height: 25,
+        orientation: 'horizontal',
+        min: -100,
+        max: 300,
+        stats: {
+            whiskerLow: 194.3,
+            quartile1: 201,
+            quartile2: 234.5,
+            quartile3: 254.6,
+            whiskerHigh: 257.95,
+            outliers: [ -80, -20, 50, 75, 184.25, 268, 290 ],
+        },
+    },
+    {
+        width: 600,
+        height: 25,
+        orientation: 'horizontal',
+        min: 0,
+        max: 300,
+        stats: {
+            whiskerLow: 194.3,
+            quartile1: 201,
+            quartile2: 234.5,
+            quartile3: 254.6,
+            whiskerHigh: 257.95,
+            outliers: [ 50, 75, 184.25, 268, 290 ],
+        },
+    },
+    {
+        width: 900,
+        height: 25,
+        orientation: 'horizontal',
+        min: 0,
+        max: 300,
+        stats: {
+            whiskerLow: 194.3,
+            quartile1: 201,
+            quartile2: 234.5,
+            quartile3: 254.6,
+            whiskerHigh: 257.95,
+            outliers: [ 50, 75, 184.25, 268, 290 ],
+        },
+    },
+    {
+        width: 400,
+        height: 25,
+        orientation: 'horizontal',
+        min: 0,
+        max: 30,
+        stats: computeBoxplotStats(
+            _('14 15 16 16 17 17 17 17 17 18 18 18 18 18 18 19 19 19 20 20 20 20 20 20 21 21 22 23 24 24 29'.split(' '))
+                .map(function (d) { return parseInt(d, 10); })
+        )
+    }];
 
-  React.render(
-      React.createElement(Boxplot, {
-          width: 400,
-          height: 25,
-          orientation: 'horizontal',
-          min: 0,
-          max: 300,
-          stats: {
-              whiskerLow: 194.3,
-              quartile1: 201,
-              quartile2: 234.5,
-              quartile3: 254.6,
-              whiskerHigh: 257.95,
-              outliers: [ 50, 75, 184.25, 268, 290 ],
-          },
-      }),
-      document.getElementById('chart1')
-  );
+    _(plotAttrs).each(function (attrs) {
+        var domNode = document.createElement('div');
+        document.body.appendChild(domNode);
 
-  React.render(
-      React.createElement(Boxplot, {
-          width: 400,
-          height: 25,
-          orientation: 'horizontal',
-          min: -150,
-          max: 150,
-          stats: {
-              whiskerLow: 44.3,
-              quartile1: 51,
-              quartile2: 84.5,
-              quartile3: 104.6,
-              whiskerHigh: 107.95,
-              outliers: [ -100, -75, 34.25, 118, 140 ],
-          },
-      }),
-      document.getElementById('chart1a')
-  );
+        React.render(React.createElement(Boxplot, attrs), domNode);
+    });
 
-  React.render(
-      React.createElement(Boxplot, {
-          width: 400,
-          height: 25,
-          orientation: 'horizontal',
-          min: 0,
-          max: 3000,
-          stats: {
-              whiskerLow: 1943,
-              quartile1: 2010,
-              quartile2: 2345.,
-              quartile3: 2546.,
-              whiskerHigh: 2579.5,
-              outliers: [ 500, 750, 1842.5, 2680, 2900 ],
-          },
-      }),
-      document.getElementById('chart1b')
-  );
-
-  React.render(
-      React.createElement(Boxplot, {
-          width: 400,
-          height: 25,
-          orientation: 'horizontal',
-          min: 0,
-          max: 30,
-          stats: {
-              whiskerLow: 19.43,
-              quartile1: 20.1,
-              quartile2: 23.45,
-              quartile3: 25.46,
-              whiskerHigh: 25.795,
-              outliers: [ 5, 7.5, 18.425, 26.8, 29 ],
-          },
-      }),
-      document.getElementById('chart1c')
-  );
-
-  React.render(
-      React.createElement(Boxplot, {
-          width: 400,
-          height: 25,
-          orientation: 'horizontal',
-          min: -100,
-          max: 300,
-          stats: {
-              whiskerLow: 194.3,
-              quartile1: 201,
-              quartile2: 234.5,
-              quartile3: 254.6,
-              whiskerHigh: 257.95,
-              outliers: [ -80, -20, 50, 75, 184.25, 268, 290 ],
-          },
-      }),
-      document.getElementById('chart2')
-  );
-
-  React.render(
-      React.createElement(Boxplot, {
-          width: 600,
-          height: 25,
-          orientation: 'horizontal',
-          min: 0,
-          max: 300,
-          stats: {
-              whiskerLow: 194.3,
-              quartile1: 201,
-              quartile2: 234.5,
-              quartile3: 254.6,
-              whiskerHigh: 257.95,
-              outliers: [ 50, 75, 184.25, 268, 290 ],
-          },
-      }),
-      document.getElementById('chart3')
-  );
-
-  React.render(
-      React.createElement(Boxplot, {
-          width: 900,
-          height: 25,
-          orientation: 'horizontal',
-          min: 0,
-          max: 300,
-          stats: {
-              whiskerLow: 194.3,
-              quartile1: 201,
-              quartile2: 234.5,
-              quartile3: 254.6,
-              whiskerHigh: 257.95,
-              outliers: [ 50, 75, 184.25, 268, 290 ],
-          },
-      }),
-      document.getElementById('chart4')
-  );
-
-  var data = '14 15 16 16 17 17 17 17 17 18 18 18 18 18 18 19 19 19 20 20 20 20 20 20 21 21 22 23 24 24 29'.split(' ');
-  data = _(data).map(function (d) { return parseInt(d, 10); });
-
-  var stats = computeBoxplotStats(data);
-
-  React.render(
-      React.createElement(Boxplot, {
-          width: 400,
-          height: 25,
-          orientation: 'horizontal',
-          min: 0,
-          max: 30,
-          stats: stats,
-      }),
-      document.getElementById('chart5')
-  );
-
-  </script>
+    </script>
   
 </body>
 </html>

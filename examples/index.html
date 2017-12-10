@@ -5,9 +5,14 @@
 
     <title>React Boxplot Example</title>
 
-    <script src="../node_modules/react/dist/react.js"></script>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/create-react-class/create-react-class.js"></script>
+    <script src="../node_modules/prop-types/prop-types.js"></script>
     <script src="../node_modules/underscore/underscore.js"></script>
-    <script src="../node_modules/simple-statistics/src/simple_statistics.js"></script>
+    <script src="../node_modules/simple-statistics/dist/simple_statistics.js"></script>
+
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+
     <script src="../dist/boxplot.js"></script>
     <script src="../dist/stats.js"></script>
 
@@ -139,7 +144,7 @@
         var domNode = document.createElement('div');
         document.body.appendChild(domNode);
 
-        React.render(React.createElement(Boxplot, attrs), domNode);
+        ReactDOM.render(React.createElement(Boxplot, attrs), domNode);
     });
 
     </script>

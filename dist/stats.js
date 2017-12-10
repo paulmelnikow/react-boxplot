@@ -10,14 +10,14 @@
 
     var computeBoxplotStats = function (data) {
 
-        var quartile2 = ss.median(data);
+        var median = ss.median(data);
 
-        var quartile1 = ss.quantile(data, 0.25),
-            quartile3 = ss.quantile(data, 0.75),
-            interQuartileRange = quartile3 - quartile1;
+        var lowerQuartile = ss.quantile(data, 0.25),
+            upperQuartile = ss.quantile(data, 0.75),
+            interQuartileRange = upperQuartile - lowerQuartile;
 
-        var lowerOutlierCutoff = quartile1 - 1.5 * interQuartileRange,
-            upperOutlierCutoff = quartile3 + 1.5 * interQuartileRange;
+        var lowerOutlierCutoff = lowerQuartile - 1.5 * interQuartileRange,
+            upperOutlierCutoff = upperQuartile + 1.5 * interQuartileRange;
 
         var outliers = [], nonOutliers = [];
         _(data).each(function (datum) {
@@ -28,15 +28,15 @@
             }
         });
 
-        var whiskerLow = ss.min(nonOutliers),
-            whiskerHigh = ss.max(nonOutliers);
+        var minimum = ss.min(nonOutliers),
+            maximum = ss.max(nonOutliers);
 
         return {
-            whiskerLow: whiskerLow,
-            quartile1: quartile1,
-            quartile2: quartile2,
-            quartile3: quartile3,
-            whiskerHigh: whiskerHigh,
+            whiskerLow: minimum,
+            quartile1: lowerQuartile,
+            quartile2: median,
+            quartile3: upperQuartile,
+            whiskerHigh: maximum,
             outliers: outliers,
         };
     };

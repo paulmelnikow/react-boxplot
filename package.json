@@ -8,7 +8,12 @@
   "bugs": "https://www.github.com/bodylabs/react-boxplot/issues",
   "author": "Paul Melnikow <paul.melnikow@bodylabs.com>",
   "license": "BSD",
-  "keywords": ["react", "chart", "boxplot", "svg"],
+  "keywords": [
+    "react",
+    "chart",
+    "boxplot",
+    "svg"
+  ],
   "scripts": {
     "build": "jsx --extension jsx src/ dist/",
     "watch": "jsx --extension jsx --watch src/ dist/",
@@ -19,14 +24,17 @@
   "devDependencies": {
     "http-server": "~0.8.0",
     "opn": "~1.0.2",
-    "react": "~0.12.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-tools": "~0.13.2"
   },
   "peerDependencies": {
-    "react": ">=0.12.1"
+    "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "simple-statistics": "~0.9.1",
+    "create-react-class": "^15.6.2",
+    "prop-types": "^15.6.0",
+    "simple-statistics": "^1.0.0",
     "underscore": "~1.8"
   }
 }

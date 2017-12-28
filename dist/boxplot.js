@@ -1,12 +1,12 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
-        define(['react', 'underscore'], factory);
+        define(['react', 'create-react-class', 'prop-types', 'underscore'], factory);
     } else if (typeof exports === 'object') {
-        module.exports = factory(require('react'), require('underscore'));
+        module.exports = factory(require('react'), require('create-react-class'), require('prop-types'), require('underscore'));
     } else {
-        root.Boxplot = factory(root.React, root._);
+        root.Boxplot = factory(root.React, root.createReactClass, root.PropTypes, root._);
     }
-}(this, function (React, _) {
+}(this, function (React, createReactClass, PropTypes, _) {
 
     // Inspiration:
     //
@@ -15,47 +15,47 @@
     // - http://bl.ocks.org/jensgrubert/7789216
     // - http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/
     //
-    var Boxplot = React.createClass({
+    var Boxplot = createReactClass({
 
         propTypes: {
             // Width of the svg element
-            width: React.PropTypes.number.isRequired,
+            width: PropTypes.number.isRequired,
             // Height of the svg element
-            height: React.PropTypes.number.isRequired,
+            height: PropTypes.number.isRequired,
             // Orientation of the plot. vertical means min values at the left,
             // horizontal means min values at the bottom.
-            orientation: React.PropTypes.oneOf(['vertical', 'horizontal']),
+            orientation: PropTypes.oneOf(['vertical', 'horizontal']),
 
             // Minimum and maximum values for the axis. Values outside this
             // range are clipped.
-            min: React.PropTypes.number.isRequired,
-            max: React.PropTypes.number.isRequired,
+            min: PropTypes.number.isRequired,
+            max: PropTypes.number.isRequired,
 
             // The stats to plot.
-            stats: React.PropTypes.shape({
+            stats: PropTypes.shape({
                 // The tick of the lower whisker.
-                whiskerLow: React.PropTypes.number.isRequired,
+                whiskerLow: PropTypes.number.isRequired,
                 // The lower end of the box.
-                quartile1: React.PropTypes.number.isRequired,
+                quartile1: PropTypes.number.isRequired,
                 // The median.
-                quartile2: React.PropTypes.number.isRequired,
+                quartile2: PropTypes.number.isRequired,
                 // The upper end of the box.
-                quartile3: React.PropTypes.number.isRequired,
+                quartile3: PropTypes.number.isRequired,
                 // The tick of the upper whisker.
-                whiskerHigh: React.PropTypes.number.isRequired,
+                whiskerHigh: PropTypes.number.isRequired,
                 // The outliers.
-                outliers: React.PropTypes.array,
+                outliers: PropTypes.array,
             }),
 
-            style: React.PropTypes.object,
-            tickStyle: React.PropTypes.object,
-            whiskerStrokeWidth: React.PropTypes.number,
-            whiskerStyle: React.PropTypes.object,
-            boxStyle: React.PropTypes.object,
-            medianStrokeWidth: React.PropTypes.number,
-            medianStyle: React.PropTypes.object,
-            outlierRadius: React.PropTypes.number,
-            outlierStyle: React.PropTypes.object,
+            style: PropTypes.object,
+            tickStyle: PropTypes.object,
+            whiskerStrokeWidth: PropTypes.number,
+            whiskerStyle: PropTypes.object,
+            boxStyle: PropTypes.object,
+            medianStrokeWidth: PropTypes.number,
+            medianStyle: PropTypes.object,
+            outlierRadius: PropTypes.number,
+            outlierStyle: PropTypes.object,
         },
 
         getDefaultProps: function () {

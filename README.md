@@ -25,7 +25,7 @@ React.render(
 );
 ```
 
-<img src="https://bodylabs.github.io/react-boxplot/example1.png" width="400">
+<img src="https://paulmelnikow.github.io/react-boxplot/example1.png" width="400">
 
 Or you can compute the stats yourself:
 
@@ -50,7 +50,7 @@ React.render(
 );
 ```
 
-<img src="https://bodylabs.github.io/react-boxplot/example2.png" width="400">
+<img src="https://paulmelnikow.github.io/react-boxplot/example2.png" width="400">
 
 
 Features
@@ -91,5 +91,5 @@ License
 The project is licensed under the two-clause BSD license.
 
 
-[issues]: https://github.com/bodylabs/react-boxplot/issues
-[source]: https://github.com/bodylabs/react-boxplot
+[issues]: https://github.com/paulmelnikow/react-boxplot/issues
+[source]: https://github.com/paulmelnikow/react-boxplot

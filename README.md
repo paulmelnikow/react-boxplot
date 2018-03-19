@@ -1,7 +1,7 @@
 react-boxplot
 =============
 
-> Simple SVG box plots in React
+Simple SVG box plots in React.
 
 [![NPM](https://img.shields.io/npm/v/react-boxplot.svg)](https://www.npmjs.com/package/react-boxplot) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -43,7 +43,7 @@ class Example extends Component {
 
 Or you can compute the stats yourself:
 
-```
+```jsx
 class Example extends Component {
   render () {
     return (

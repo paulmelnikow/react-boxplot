@@ -16,8 +16,8 @@
   "jsnext:main": "dist/index.es.js",
   "scripts": {
     "test": "CI=1 react-scripts test --env=jsdom",
-    "build": "rollup -c",
-    "start": "rollup -c -w",
+    "build": "rollup --config",
+    "start": "rollup --config --watch",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"

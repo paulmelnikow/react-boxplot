@@ -58,9 +58,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-/dev-tools
-/versioned_assets/
-/tmp/
-/.bundle/
-/.sass-cache/
-.module-cache
+/build
+/dist

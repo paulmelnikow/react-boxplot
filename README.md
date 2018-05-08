@@ -101,6 +101,16 @@ Contribute
 Pull requests welcome!
 
 
+Acknowledgements
+----------------
+
+This library was developed by Paul Melnikow while working at Body Labs. This
+is a fork of [the original repo][bodylabs], now abandoned, being maintained by
+its original author.
+
+[bodylabs]: https://github.com/bodylabs/react-boxplot
+
+
 License
 -------
 

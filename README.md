@@ -25,18 +25,14 @@ import { Boxplot, computeBoxplotStats } from 'react-boxplot'
 const values = [
   14, 15, 16, 16, 17, 17, 17, 17, 17, 18, 18, 18, 18, 18, 18, 19,
   19, 19, 20, 20, 20, 20, 20, 20, 21, 21, 22, 23, 24, 24, 29,
-];
+]
 
-class Example extends Component {
-  render () {
-    return (
-      <Boxplot
-        width={ 400 } height={ 20 } orientation="horizontal"
-        min={ 0 } max={ 30 }
-        stats={ computeBoxplotStats(values) } />
-    )
-  }
-}
+const Example = () => (
+  <Boxplot
+    width={ 400 } height={ 20 } orientation="horizontal"
+    min={ 0 } max={ 30 }
+    stats={ computeBoxplotStats(values) } />
+)
 ```
 
 <img src="https://paulmelnikow.github.io/react-boxplot/example1.png" width="400">
@@ -44,23 +40,19 @@ class Example extends Component {
 Or you can compute the stats yourself:
 
 ```jsx
-class Example extends Component {
-  render () {
-    return (
-      <Boxplot
-        width={ 400 } height={ 25 } orientation="horizontal"
-        min={ 0 } max={ 300 }
-        stats={ {
-          whiskerLow: 194.3,
-          quartile1: 201,
-          quartile2: 234.5,
-          quartile3: 254.6,
-          whiskerHigh: 257.95,
-          outliers: [ 50, 75, 184.25, 268, 290 ],
-        } } />
-    )
-  }
-}
+const Example = () => (
+  <Boxplot
+    width={ 400 } height={ 25 } orientation="horizontal"
+    min={ 0 } max={ 300 }
+    stats={ {
+      whiskerLow: 194.3,
+      quartile1: 201,
+      quartile2: 234.5,
+      quartile3: 254.6,
+      whiskerHigh: 257.95,
+      outliers: [ 50, 75, 184.25, 268, 290 ],
+    } } />
+)
 ```
 
 <img src="https://paulmelnikow.github.io/react-boxplot/example2.png" width="400">

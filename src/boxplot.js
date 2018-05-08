@@ -28,6 +28,7 @@ const Boxplot = ({
   medianStyle,
   outlierRadius,
   outlierStyle,
+  className,
 }) => {
   let xMax, horizScaleFactor, vertScaleFactor, transforms;
   if (orientation == 'vertical') {
@@ -61,7 +62,7 @@ const Boxplot = ({
   const xCenter = xMax / 2
 
   return (
-    <svg width={ width } height={ height }>
+    <svg width={ width } height={ height } className={ className }>
       <g transform={ transforms.join(' ') } style={ style }>
         <line
           key="tick-low"
@@ -157,6 +158,9 @@ Object.assign(Boxplot, {
     medianStyle: PropTypes.object,
     outlierRadius: PropTypes.number,
     outlierStyle: PropTypes.object,
+
+    // Pass through, to support styled-components.
+    className: PropTypes.string,
   },
 
   defaultProps: {

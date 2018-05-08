@@ -4,6 +4,13 @@ Changelog
 [Unreleased]
 ------------
 
+[1.1.0]
+-------
+
+For compatibility with CSS in JS, pass through `className` property from
+Boxplot to the enclosed svg element.
+
+
 [1.0.0]
 -------
 
@@ -21,6 +28,7 @@ The API is entirely the same, though it's now imported differently.
 - Update for bodylabs -> paulmelnikow
 
 
-[Unreleased]: https://github.com/paulmelnikow/icedfrisby-nock/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/paulmelnikow/icedfrisby-nock/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/paulmelnikow/icedfrisby-nock/compare/1.0.0...0.1.0
 [1.0.0]: https://github.com/paulmelnikow/icedfrisby-nock/compare/1.0.0...0.4.0
 [0.4.0]: https://github.com/paulmelnikow/icedfrisby-nock/compare/0.4.0...0.3.1

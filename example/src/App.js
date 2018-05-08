@@ -1,5 +1,17 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Boxplot, computeBoxplotStats } from 'react-boxplot'
+
+const StyledMain = styled.main`
+  background-color: #ddd
+`
+
+const StyledBoxplot = styled(Boxplot)`
+  margin: 10px;
+  border: solid 20px #ccc;
+  border-radius: 3px;
+  background-color: white;
+`
 
 const plotAttrs = [
   {
@@ -117,14 +129,32 @@ const plotAttrs = [
       '14 15 16 16 17 17 17 17 17 18 18 18 18 18 18 19 19 19 20 20 20 20 20 20 21 21 22 23 24 24 29'
         .split(' ')
         .map(d => parseInt(d, 10)))
+  },
+  {
+    width: 150,
+    height: 15,
+    orientation: 'horizontal',
+    min: 10,
+    max: 99,
+    stats: {
+      whiskerLow: 86.2,
+      quartile1: 91.1,
+      quartile2: 100,
+      quartile3: 118,
+      whiskerHigh: 143,
+      outliers: [],
+    },
   }
 ]
 
 const App = () => (
-  <div>
+  <StyledMain>
     {
-      plotAttrs.map(attrs => <Boxplot { ...attrs } />)
+      plotAttrs.map(attrs => [
+        <StyledBoxplot { ...attrs } />,
+        <br />,
+      ])
     }
-  </div>
+  </StyledMain>
 )
 export default App

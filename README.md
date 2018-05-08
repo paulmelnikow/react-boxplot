@@ -77,16 +77,19 @@ Features
 Development
 -----------
 
+In one terminal, start the build for the library:
+
 ```sh
-yarn install
+yarn
 yarn start
 ```
 
-Or, using npm:
+And, in a second terminal, start the build for the example app:
 
 ```sh
-npm install
-npm run start
+cd example
+yarn
+yarn start
 ```
 
 Contribute

@@ -1,8 +1,3 @@
 {
-  "version": 2,
-  "name": "cra",
-  "builds": [{ "src": "example/package.json", "use": "@now/static-build" }],
-  "routes": [{ "src": "^/static/(.*)", "dest": "/example/static/$1" }],
-  "routes": [{ "src": "^/(.*)", "dest": "/example/build/$1" }],
-  "public": true
+   "type": "static"
 }

@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "builds": [{ "src": "example/build", "use": "@now/static" }],
+  "public": true
+}

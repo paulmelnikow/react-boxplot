@@ -1,5 +1,7 @@
 {
   "version": 2,
-  "builds": [{ "src": "example/build", "use": "@now/static" }],
+  "name": "cra",
+  "builds": [{ "src": "example/package.json", "use": "@now/static-build" }],
+  "routes": [{ "src": "^/static/(.*)", "dest": "/example/static/$1" }],
   "public": true
 }

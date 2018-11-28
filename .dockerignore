@@ -1,4 +1,5 @@
 *
 !src
 !yarn.lock
+!example/src
 !package.json

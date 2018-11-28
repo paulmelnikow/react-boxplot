@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Boxplot, computeBoxplotStats } from 'react-boxplot'
 
 const StyledMain = styled.main`
-  background-color: #ddd
+  background-color: #ddd;
 `
 
 const StyledBoxplot = styled(Boxplot)`
@@ -26,7 +26,7 @@ const plotAttrs = [
       quartile2: 234.5,
       quartile3: 254.6,
       whiskerHigh: 257.95,
-      outliers: [ 50, 75, 184.25, 268, 290 ],
+      outliers: [50, 75, 184.25, 268, 290],
     },
   },
   {
@@ -41,7 +41,7 @@ const plotAttrs = [
       quartile2: 84.5,
       quartile3: 104.6,
       whiskerHigh: 107.95,
-      outliers: [ -100, -75, 34.25, 118, 140 ],
+      outliers: [-100, -75, 34.25, 118, 140],
     },
   },
   {
@@ -53,10 +53,10 @@ const plotAttrs = [
     stats: {
       whiskerLow: 1943,
       quartile1: 2010,
-      quartile2: 2345.,
-      quartile3: 2546.,
+      quartile2: 2345,
+      quartile3: 2546,
       whiskerHigh: 2579.5,
-      outliers: [ 500, 750, 1842.5, 2680, 2900 ],
+      outliers: [500, 750, 1842.5, 2680, 2900],
     },
   },
   {
@@ -71,7 +71,7 @@ const plotAttrs = [
       quartile2: 23.45,
       quartile3: 25.46,
       whiskerHigh: 25.795,
-      outliers: [ 5, 7.5, 18.425, 26.8, 29 ],
+      outliers: [5, 7.5, 18.425, 26.8, 29],
     },
   },
   {
@@ -86,7 +86,7 @@ const plotAttrs = [
       quartile2: 234.5,
       quartile3: 254.6,
       whiskerHigh: 257.95,
-      outliers: [ -80, -20, 50, 75, 184.25, 268, 290 ],
+      outliers: [-80, -20, 50, 75, 184.25, 268, 290],
     },
   },
   {
@@ -101,7 +101,7 @@ const plotAttrs = [
       quartile2: 234.5,
       quartile3: 254.6,
       whiskerHigh: 257.95,
-      outliers: [ 50, 75, 184.25, 268, 290 ],
+      outliers: [50, 75, 184.25, 268, 290],
     },
   },
   {
@@ -116,7 +116,7 @@ const plotAttrs = [
       quartile2: 234.5,
       quartile3: 254.6,
       whiskerHigh: 257.95,
-      outliers: [ 50, 75, 184.25, 268, 290 ],
+      outliers: [50, 75, 184.25, 268, 290],
     },
   },
   {
@@ -128,7 +128,8 @@ const plotAttrs = [
     stats: computeBoxplotStats(
       '14 15 16 16 17 17 17 17 17 18 18 18 18 18 18 19 19 19 20 20 20 20 20 20 21 21 22 23 24 24 29'
         .split(' ')
-        .map(d => parseInt(d, 10)))
+        .map(d => parseInt(d, 10))
+    ),
   },
   {
     width: 150,
@@ -144,17 +145,12 @@ const plotAttrs = [
       whiskerHigh: 143,
       outliers: [],
     },
-  }
+  },
 ]
 
 const App = () => (
   <StyledMain>
-    {
-      plotAttrs.map(attrs => [
-        <StyledBoxplot { ...attrs } />,
-        <br />,
-      ])
-    }
+    {plotAttrs.map(attrs => [<StyledBoxplot {...attrs} />, <br />])}
   </StyledMain>
 )
 export default App

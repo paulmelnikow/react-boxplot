@@ -30,11 +30,11 @@ const Boxplot = ({
   outlierStyle,
   className,
 }) => {
-  let xMax, horizScaleFactor, vertScaleFactor, transforms;
+  let xMax, horizScaleFactor, vertScaleFactor, transforms
   if (orientation == 'vertical') {
-    xMax = width;
+    xMax = width
 
-    vertScaleFactor = height / (max - min);
+    vertScaleFactor = height / (max - min)
     horizScaleFactor = 1.0
 
     // Coordinate system: +y at the top, +x to the right.
@@ -62,56 +62,73 @@ const Boxplot = ({
   const xCenter = xMax / 2
 
   return (
-    <svg width={ width } height={ height } className={ className }>
-      <g transform={ transforms.join(' ') } style={ style }>
+    <svg width={width} height={height} className={className}>
+      <g transform={transforms.join(' ')} style={style}>
         <line
           key="tick-low"
-          x1={ xMin } x2={ xMax }
-          y1={ stats.whiskerLow } y2={ stats.whiskerLow }
-          strokeWidth={ whiskerStrokeWidth / horizScaleFactor }
-          style={ tickStyle } />
+          x1={xMin}
+          x2={xMax}
+          y1={stats.whiskerLow}
+          y2={stats.whiskerLow}
+          strokeWidth={whiskerStrokeWidth / horizScaleFactor}
+          style={tickStyle}
+        />
         <line
           key="whisker-low"
-          x1={ xCenter } x2={ xCenter }
-          y1={ stats.whiskerLow } y2={ stats.quartile1 }
-          strokeWidth={ whiskerStrokeWidth / vertScaleFactor }
-          style={ whiskerStyle } />
+          x1={xCenter}
+          x2={xCenter}
+          y1={stats.whiskerLow}
+          y2={stats.quartile1}
+          strokeWidth={whiskerStrokeWidth / vertScaleFactor}
+          style={whiskerStyle}
+        />
         <rect
           key="box"
-          x={ xMin } width={ xMax - xMin }
-          y={ stats.quartile1 }
-          height={ stats.quartile3 - stats.quartile1 }
+          x={xMin}
+          width={xMax - xMin}
+          y={stats.quartile1}
+          height={stats.quartile3 - stats.quartile1}
           strokeWidth="0"
-          style={ boxStyle } />
+          style={boxStyle}
+        />
         <line
           key="median"
-          x1={ xMin } x2={ xMax }
-          y1={ stats.quartile2 } y2={ stats.quartile2 }
-          strokeWidth={ medianStrokeWidth / horizScaleFactor }
-          style={ medianStyle } />
+          x1={xMin}
+          x2={xMax}
+          y1={stats.quartile2}
+          y2={stats.quartile2}
+          strokeWidth={medianStrokeWidth / horizScaleFactor}
+          style={medianStyle}
+        />
         <line
           key="whisker-high"
-          x1={ xCenter } x2={ xCenter }
-          y1={ stats.whiskerHigh } y2={ stats.quartile3 }
-          strokeWidth={ whiskerStrokeWidth / vertScaleFactor }
-          style={ whiskerStyle } />
+          x1={xCenter}
+          x2={xCenter}
+          y1={stats.whiskerHigh}
+          y2={stats.quartile3}
+          strokeWidth={whiskerStrokeWidth / vertScaleFactor}
+          style={whiskerStyle}
+        />
         <line
           key="tick-high"
-          x1={ xMin } x2={ xMax }
-          y1={ stats.whiskerHigh } y2={ stats.whiskerHigh }
-          strokeWidth={ whiskerStrokeWidth / horizScaleFactor }
-          style={ tickStyle } />
-        {
-          stats.outliers.map((outlier, index) => (
-            <ellipse
-              key={ `outlier-${index}` }
-              cx={ xCenter } cy={ outlier }
-              rx={ outlierRadius / vertScaleFactor }
-              ry={ outlierRadius / horizScaleFactor }
-              strokeWidth="0"
-              style={ outlierStyle } />
-          ))
-        }
+          x1={xMin}
+          x2={xMax}
+          y1={stats.whiskerHigh}
+          y2={stats.whiskerHigh}
+          strokeWidth={whiskerStrokeWidth / horizScaleFactor}
+          style={tickStyle}
+        />
+        {stats.outliers.map((outlier, index) => (
+          <ellipse
+            key={`outlier-${index}`}
+            cx={xCenter}
+            cy={outlier}
+            rx={outlierRadius / vertScaleFactor}
+            ry={outlierRadius / horizScaleFactor}
+            strokeWidth="0"
+            style={outlierStyle}
+          />
+        ))}
       </g>
     </svg>
   )
@@ -168,11 +185,11 @@ Object.assign(Boxplot, {
     style: { strokeOpacity: 1, fillOpacity: 0.75 },
     // tickStyle: { stroke: 'black', strokeDasharray: '2,2' },
     tickStyle: { stroke: 'black' },
-    whiskerStrokeWidth: 1.,
+    whiskerStrokeWidth: 1,
     // whiskerStyle: { stroke: 'black', strokeDasharray: '2,2' },
     whiskerStyle: { stroke: 'black' },
     boxStyle: { stroke: 'black', fill: 'black' },
-    medianStrokeWidth: 2.,
+    medianStrokeWidth: 2,
     medianStyle: { stroke: 'white' },
     outlierRadius: 2.5,
     outlierStyle: { stroke: 'black', fill: 'black' },

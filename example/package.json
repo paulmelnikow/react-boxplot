@@ -17,6 +17,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "now-build": "yarn build && mv build ../dist"
+    "now-build": "cd .. && yarn && yarn build"
   }
 }

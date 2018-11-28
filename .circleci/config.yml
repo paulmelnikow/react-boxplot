@@ -32,6 +32,11 @@ jobs:
           when: always
 
       - run:
+          name: Install dependencies for the example app
+          command: cd example && yarn
+          when: always
+
+      - run:
           name: Build the example
           command: cd example && yarn build
           when: always

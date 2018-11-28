@@ -17,14 +17,29 @@ jobs:
           name: Install dependencies
           command: yarn
 
+      - run:
+          name: Install dependencies for the example app
+          command: cd example && yarn
+
       - save_cache:
           paths:
             - node_modules
+            - example/node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
       - run:
           name: Run tests
           command: npm test
+
+      - run:
+          name: Run the build
+          command: yarn build
+          when: always
+
+      - run:
+          name: Build the example
+          command: cd example && yarn build
+          when: always
 
       - run:
           name: Check prettier

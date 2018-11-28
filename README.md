@@ -1,5 +1,4 @@
-react-boxplot
-=============
+# react-boxplot
 
 Simple SVG box plots in React.
 
@@ -12,33 +11,62 @@ Simple SVG box plots in React.
 [build]: https://circleci.com/gh/paulmelnikow/react-boxplot/tree/master
 [prettier]: https://prettier.io/
 
-
-Install
--------
+## Install
 
 ```bash
 yarn add react-boxplot
 npm install --save react-boxplot
 ```
 
-
-Usage
------
+## Usage
 
 ```jsx
 import React, { Component } from 'react'
 import { Boxplot, computeBoxplotStats } from 'react-boxplot'
 
 const values = [
-  14, 15, 16, 16, 17, 17, 17, 17, 17, 18, 18, 18, 18, 18, 18, 19,
-  19, 19, 20, 20, 20, 20, 20, 20, 21, 21, 22, 23, 24, 24, 29,
+  14,
+  15,
+  16,
+  16,
+  17,
+  17,
+  17,
+  17,
+  17,
+  18,
+  18,
+  18,
+  18,
+  18,
+  18,
+  19,
+  19,
+  19,
+  20,
+  20,
+  20,
+  20,
+  20,
+  20,
+  21,
+  21,
+  22,
+  23,
+  24,
+  24,
+  29,
 ]
 
 const Example = () => (
   <Boxplot
-    width={ 400 } height={ 20 } orientation="horizontal"
-    min={ 0 } max={ 30 }
-    stats={ computeBoxplotStats(values) } />
+    width={400}
+    height={20}
+    orientation="horizontal"
+    min={0}
+    max={30}
+    stats={computeBoxplotStats(values)}
+  />
 )
 ```
 
@@ -49,32 +77,32 @@ Or you can compute the stats yourself:
 ```jsx
 const Example = () => (
   <Boxplot
-    width={ 400 } height={ 25 } orientation="horizontal"
-    min={ 0 } max={ 300 }
-    stats={ {
+    width={400}
+    height={25}
+    orientation="horizontal"
+    min={0}
+    max={300}
+    stats={{
       whiskerLow: 194.3,
       quartile1: 201,
       quartile2: 234.5,
       quartile3: 254.6,
       whiskerHigh: 257.95,
-      outliers: [ 50, 75, 184.25, 268, 290 ],
-    } } />
+      outliers: [50, 75, 184.25, 268, 290],
+    }}
+  />
 )
 ```
 
 <img src="https://paulmelnikow.github.io/react-boxplot/example2.png" width="400">
 
-
-Features
---------
+## Features
 
 - Pure SVG.
 - Horizonal or vertical orientation.
 - The scale of the major axis matches the original data.
 
-
-Development
------------
+## Development
 
 In one terminal, start the build for the library:
 
@@ -91,17 +119,14 @@ yarn
 yarn start
 ```
 
-Contribute
-----------
+## Contribute
 
 - [Issue tracker][issues]
 - [Source code][source]
 
 Pull requests welcome!
 
-
-Acknowledgements
-----------------
+## Acknowledgements
 
 This library was developed by Paul Melnikow while working at Body Labs. This
 is a fork of [the original repo][bodylabs], now abandoned, being maintained by
@@ -109,12 +134,9 @@ its original author.
 
 [bodylabs]: https://github.com/bodylabs/react-boxplot
 
-
-License
--------
+## License
 
 The project is licensed under the two-clause BSD license.
-
 
 [issues]: https://github.com/paulmelnikow/react-boxplot/issues
 [source]: https://github.com/paulmelnikow/react-boxplot

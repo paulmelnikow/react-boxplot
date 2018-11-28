@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "cra",
+  "name": "react-boxplot",
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
   "routes": [{ "src": "^/static/(.*)", "dest": "/example/static/$1" }],
   "routes": [{ "src": "^/(.*)", "dest": "/example/build/$1" }],

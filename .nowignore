@@ -1,6 +1,7 @@
 .circleci/
 README.md
 CHANGELOG.md
-.eslintrc
+.eslintrc.yml
+.eslintignore
 .prettierrc.yml
 .prettierignore

@@ -2,7 +2,9 @@
   "version": 2,
   "name": "react-boxplot",
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
-  "routes": [{ "src": "^/static/(.*)", "dest": "/example/static/$1" }],
-  "routes": [{ "src": "^/(.*)", "dest": "/example/build/$1" }],
+  "routes": [
+    { "src": "^/static/(.*)", "dest": "/example/static/$1" },
+    { "src": "^/(.*)", "dest": "/example/build/$1" }
+  ],
   "public": true
 }

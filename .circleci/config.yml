@@ -27,6 +27,16 @@ jobs:
           command: npm test
 
       - run:
+          name: Run the build
+          command: yarn build
+          when: always
+
+      - run:
+          name: Build the example
+          command: cd example && yarn build
+          when: always
+
+      - run:
           name: Check prettier
           command: npm run prettier-check
           when: always

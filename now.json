@@ -5,7 +5,7 @@
   "routes": [
     { "src": "^/dist/(.*)", "dest": "/dist/$1" },
     { "src": "^/static/(.*)", "dest": "/example/static/$1" },
-    { "src": "^/(.*)", "dest": "/example/build/$1" }
+    { "src": "^/(.*)", "dest": "/example/$1" }
   ],
   "public": true
 }

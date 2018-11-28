@@ -1,4 +1,4 @@
 {
-  "type": "static",
+  "type": "docker",
   "public": true
 }

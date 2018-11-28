@@ -14,4 +14,5 @@ RUN yarn
 RUN yarn build
 RUN rm -rf node_modules
 
+WORKDIR /src
 RUN cp -r example/build /public

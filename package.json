@@ -21,8 +21,8 @@
     "build": "rollup --config",
     "start": "rollup --config --watch",
     "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "now-build": "npm run predeploy && cp -r build/* ../dist",
+    "predeploy": "cd example && yarn install && yarn run build && cp -r build/* ../dist",
+    "now-build": "npm run predeploy",
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {

@@ -1,5 +1,10 @@
 *
 !src
 !yarn.lock
-!example/src
 !package.json
+!rollup.config.js
+!.babelrc
+!example/src
+!example/public
+!example/yarn.lock
+!example/package.json

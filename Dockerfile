@@ -2,14 +2,18 @@
 # the example app.
 
 FROM mhart/alpine-node:8
-WORKDIR /src/example
-
-COPY example/package.json example/yarn.lock .
-RUN yarn
 
 WORKDIR /src
-COPY package.json yarn.lock .
-RUN yarn
 
-WORKDIR /src/example
-RUN yarn build && cp -r ./build /public
+RUN mkdir example
+COPY example/package.json example/yarn.lock ./example/
+COPY package.json yarn.lock ./
+
+RUN cd example && yarn
+RUN yarn --ignore-scripts
+
+COPY . ./
+
+RUN yarn build
+RUN cd example && yarn build && cp -r ./build /public
+

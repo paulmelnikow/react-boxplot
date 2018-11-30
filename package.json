@@ -22,8 +22,8 @@
     "build": "rollup --config",
     "start": "rollup --config --watch",
     "prepare": "npm run build",
-    "predeploy": "cd example && npm ci && npm run build",
-    "now-build": "cd dist && mkdir dist example && mv *.js dist && npm run predeploy && cp -r ../example/build/* example/",
+    "predeploy": "cd example && npm install && npm run build",
+    "now-build": "rm -rf example/node_modules && cd dist && mkdir dist example && mv *.js dist && npm run predeploy && cp -r ../example/build/* example/",
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {

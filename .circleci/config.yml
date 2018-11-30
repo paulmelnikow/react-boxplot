@@ -9,13 +9,13 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-{{ checksum "package-lock.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       - run:
           name: Install dependencies
-          command: yarn
+          command: npm ci
 
       - run:
           name: Install dependencies for the example app
@@ -25,7 +25,7 @@ jobs:
           paths:
             - node_modules
             - example/node_modules
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
 
       - run:
           name: Run tests

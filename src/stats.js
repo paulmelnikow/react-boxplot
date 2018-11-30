@@ -11,7 +11,6 @@ export default function computeBoxplotStats(data) {
   const upperOutlierCutoff = quartile3 + 1.5 * interQuartileRange
 
   const outliers = []
-
   const nonOutliers = []
   data.forEach(datum => {
     if (datum < lowerOutlierCutoff || datum > upperOutlierCutoff) {

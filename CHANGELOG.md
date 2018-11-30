@@ -1,6 +1,11 @@
 # Changelog
 
-## [Unreleased]
+## 2.0.0 -- Nov 19, 2018
+
+Update dependencies. There is a breaking change in [simple-statistics][].
+Whereas invalid values used to return `NaN`, they now raise an exception.
+
+[simple-stastics]: https://github.com/simple-statistics/simple-statistics/blob/master/CHANGELOG.md#300-2017-04-06
 
 ## [1.1.0]
 

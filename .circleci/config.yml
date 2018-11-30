@@ -19,7 +19,7 @@ jobs:
 
       - run:
           name: Install dependencies for the example app
-          command: cd example && yarn
+          command: cd example && npm ci
 
       - save_cache:
           paths:
@@ -33,12 +33,12 @@ jobs:
 
       - run:
           name: Run the build
-          command: yarn build
+          command: npm run build
           when: always
 
       - run:
           name: Build the example
-          command: cd example && yarn build
+          command: cd example && npm run build
           when: always
 
       - run:

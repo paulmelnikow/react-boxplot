@@ -7,7 +7,7 @@ Simple SVG box plots in React.
 [![build](https://img.shields.io/circleci/project/github/paulmelnikow/react-boxplot.svg?style=flat-square)][build]
 [![code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)][prettier]
 
-[npm]: https://www.npmjs.com/package/paulmelnikow/react-boxplot
+[npm]: https://www.npmjs.com/package/react-boxplot
 [build]: https://circleci.com/gh/paulmelnikow/react-boxplot/tree/master
 [prettier]: https://prettier.io/
 

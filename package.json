@@ -63,7 +63,7 @@
     "react-test-renderer": "^16.2.0",
     "rollup": "^0.67.3",
     "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-peer-deps-external": "^2.0.0",
     "rollup-plugin-url": "^2.0.1",

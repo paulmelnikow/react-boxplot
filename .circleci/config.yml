@@ -9,23 +9,23 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v2-dependencies-{{ checksum "package-lock.json" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - v2-dependencies-
 
       - run:
           name: Install dependencies
-          command: yarn
+          command: npm ci
 
       - run:
           name: Install dependencies for the example app
-          command: cd example && yarn
+          command: cd example && npm ci
 
       - save_cache:
           paths:
             - node_modules
             - example/node_modules
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          key: v2-dependencies-{{ checksum "package-lock.json" }}
 
       - run:
           name: Run tests
@@ -33,12 +33,12 @@ jobs:
 
       - run:
           name: Run the build
-          command: yarn build
+          command: npm run build
           when: always
 
       - run:
           name: Build the example
-          command: cd example && yarn build
+          command: cd example && npm run build
           when: always
 
       - run:

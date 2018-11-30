@@ -107,16 +107,16 @@ const Example = () => (
 In one terminal, start the build for the library:
 
 ```sh
-yarn
-yarn start
+npm
+npm start
 ```
 
 And, in a second terminal, start the build for the example app:
 
 ```sh
 cd example
-yarn
-yarn start
+npm
+npm start
 ```
 
 ## Contribute

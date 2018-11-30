@@ -19,7 +19,9 @@ jobs:
 
       - run:
           name: Install dependencies for the example app
-          command: cd example && npm install
+          # Argh, this really should work.
+          # command: cd example && npm install
+          command: cd example && npm ci
 
       - save_cache:
           paths:

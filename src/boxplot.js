@@ -31,7 +31,7 @@ const Boxplot = ({
   className,
 }) => {
   let xMax, horizScaleFactor, vertScaleFactor, transforms
-  if (orientation == 'vertical') {
+  if (orientation === 'vertical') {
     xMax = width
 
     vertScaleFactor = height / (max - min)
@@ -135,63 +135,61 @@ const Boxplot = ({
 }
 export default Boxplot
 
-Object.assign(Boxplot, {
-  propTypes: {
-    // Width of the svg element
-    width: PropTypes.number.isRequired,
-    // Height of the svg element
-    height: PropTypes.number.isRequired,
-    // Orientation of the plot. vertical means min values at the left,
-    // horizontal means min values at the bottom.
-    orientation: PropTypes.oneOf(['vertical', 'horizontal']),
+Boxplot.propTypes = {
+  // Width of the svg element
+  width: PropTypes.number.isRequired,
+  // Height of the svg element
+  height: PropTypes.number.isRequired,
+  // Orientation of the plot. vertical means min values at the left,
+  // horizontal means min values at the bottom.
+  orientation: PropTypes.oneOf(['vertical', 'horizontal']),
 
-    // Minimum and maximum values for the axis. Values outside this
-    // range are clipped.
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired,
+  // Minimum and maximum values for the axis. Values outside this
+  // range are clipped.
+  min: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired,
 
-    // The stats to plot.
-    stats: PropTypes.shape({
-      // The tick of the lower whisker.
-      whiskerLow: PropTypes.number.isRequired,
-      // The lower end of the box.
-      quartile1: PropTypes.number.isRequired,
-      // The median.
-      quartile2: PropTypes.number.isRequired,
-      // The upper end of the box.
-      quartile3: PropTypes.number.isRequired,
-      // The tick of the upper whisker.
-      whiskerHigh: PropTypes.number.isRequired,
-      // The outliers.
-      outliers: PropTypes.array,
-    }),
+  // The stats to plot.
+  stats: PropTypes.shape({
+    // The tick of the lower whisker.
+    whiskerLow: PropTypes.number.isRequired,
+    // The lower end of the box.
+    quartile1: PropTypes.number.isRequired,
+    // The median.
+    quartile2: PropTypes.number.isRequired,
+    // The upper end of the box.
+    quartile3: PropTypes.number.isRequired,
+    // The tick of the upper whisker.
+    whiskerHigh: PropTypes.number.isRequired,
+    // The outliers.
+    outliers: PropTypes.array,
+  }),
 
-    style: PropTypes.object,
-    tickStyle: PropTypes.object,
-    whiskerStrokeWidth: PropTypes.number,
-    whiskerStyle: PropTypes.object,
-    boxStyle: PropTypes.object,
-    medianStrokeWidth: PropTypes.number,
-    medianStyle: PropTypes.object,
-    outlierRadius: PropTypes.number,
-    outlierStyle: PropTypes.object,
+  style: PropTypes.object,
+  tickStyle: PropTypes.object,
+  whiskerStrokeWidth: PropTypes.number,
+  whiskerStyle: PropTypes.object,
+  boxStyle: PropTypes.object,
+  medianStrokeWidth: PropTypes.number,
+  medianStyle: PropTypes.object,
+  outlierRadius: PropTypes.number,
+  outlierStyle: PropTypes.object,
 
-    // Pass through, to support styled-components.
-    className: PropTypes.string,
-  },
+  // Pass through, to support styled-components.
+  className: PropTypes.string,
+}
 
-  defaultProps: {
-    orientation: 'vertical',
-    style: { strokeOpacity: 1, fillOpacity: 0.75 },
-    // tickStyle: { stroke: 'black', strokeDasharray: '2,2' },
-    tickStyle: { stroke: 'black' },
-    whiskerStrokeWidth: 1,
-    // whiskerStyle: { stroke: 'black', strokeDasharray: '2,2' },
-    whiskerStyle: { stroke: 'black' },
-    boxStyle: { stroke: 'black', fill: 'black' },
-    medianStrokeWidth: 2,
-    medianStyle: { stroke: 'white' },
-    outlierRadius: 2.5,
-    outlierStyle: { stroke: 'black', fill: 'black' },
-  },
-})
+Boxplot.defaultProps = {
+  orientation: 'vertical',
+  style: { strokeOpacity: 1, fillOpacity: 0.75 },
+  // tickStyle: { stroke: 'black', strokeDasharray: '2,2' },
+  tickStyle: { stroke: 'black' },
+  whiskerStrokeWidth: 1,
+  // whiskerStyle: { stroke: 'black', strokeDasharray: '2,2' },
+  whiskerStyle: { stroke: 'black' },
+  boxStyle: { stroke: 'black', fill: 'black' },
+  medianStrokeWidth: 2,
+  medianStyle: { stroke: 'white' },
+  outlierRadius: 2.5,
+  outlierStyle: { stroke: 'black', fill: 'black' },
+}

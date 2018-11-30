@@ -22,8 +22,8 @@ The API is entirely the same, though it's now imported differently.
 
 ## [0.4.0]
 
--   Support React 16 (@jonrovira)
--   Update for bodylabs -> paulmelnikow
+- Support React 16 (@jonrovira)
+- Update for bodylabs -> paulmelnikow
 
 [unreleased]: https://github.com/paulmelnikow/icedfrisby-nock/compare/1.1.0...HEAD
 [1.1.0]: https://github.com/paulmelnikow/icedfrisby-nock/compare/1.0.0...0.1.0

@@ -23,7 +23,7 @@
     "start": "rollup --config --watch",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
-    "now-build": "npm run predeploy && cd dist && mkdir dist && mv *.js dist && mkdir example && cp -r ../example/build/* example/",
+    "now-build": "cd dist && mkdir dist example && mv *.js dist && npm run predeploy && cp -r ../example/build/* example/",
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {

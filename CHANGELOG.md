@@ -1,6 +1,11 @@
 # Changelog
 
-## [Unreleased]
+## 2.0.0 -- Nov 19, 2018
+
+Update dependencies. There is a breaking change in [simple-statistics][].
+Whereas invalid values used to return `NaN`, they now raise an exception.
+
+[simple-stastics]: https://github.com/simple-statistics/simple-statistics/blob/master/CHANGELOG.md#300-2017-04-06
 
 ## [1.1.0]
 
@@ -17,8 +22,8 @@ The API is entirely the same, though it's now imported differently.
 
 ## [0.4.0]
 
-- Support React 16 (@jonrovira)
-- Update for bodylabs -> paulmelnikow
+-   Support React 16 (@jonrovira)
+-   Update for bodylabs -> paulmelnikow
 
 [unreleased]: https://github.com/paulmelnikow/icedfrisby-nock/compare/1.1.0...HEAD
 [1.1.0]: https://github.com/paulmelnikow/icedfrisby-nock/compare/1.0.0...0.1.0

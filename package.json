@@ -1,6 +1,6 @@
 {
   "name": "react-boxplot",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simple SVG box plots in React",
   "author": "Paul Melnikow <github@paulmelnikow.com>",
   "license": "BSD-2-Clause",

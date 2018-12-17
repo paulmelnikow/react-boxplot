@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1 -- Dec 17, 2018
+
+Update build dependencies.
+
 ## 2.0.0 -- Nov 19, 2018
 
 Update dependencies. There is a breaking change in [simple-statistics][].

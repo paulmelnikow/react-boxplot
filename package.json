@@ -28,7 +28,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "simple-statistics": "^6.1.1"
+    "simple-statistics": "^7.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",

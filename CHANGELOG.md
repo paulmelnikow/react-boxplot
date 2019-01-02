@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0 -- Jan 1, 2019
+
+- Update `simple-statistics` to 7.0.0, dropping support for IE11.
+
 ## 2.0.1 -- Dec 17, 2018
 
 Update build dependencies.

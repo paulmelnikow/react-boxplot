@@ -24,7 +24,7 @@
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "now-build:rearrange": "cd dist && mkdir dist example && mv *.js dist && cp -r ../example/build/* example/",
-    "now-build": "rm -rf ../example/node_modules && npm run predeploy && npm run now-build:rearrange",
+    "now-build": "npm run build && npm run predeploy && npm run now-build:rearrange",
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {

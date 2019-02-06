@@ -1,29 +1,17 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/env", {
       "modules": false
     }],
-    "stage-0",
-    "react"
+    "@babel/preset-react"
   ],
   "env": {
     "test": {
       "presets": [
-        "env",
-        "stage-0",
-        "react"
+        "@babel/env",
+        "@babel/preset-react"
       ],
       "plugins": []
-    },
-    "development": {
-      "plugins": [
-        "external-helpers"
-      ]
-    },
-    "production": {
-      "plugins": [
-        "external-helpers"
-      ]
     }
   }
 }

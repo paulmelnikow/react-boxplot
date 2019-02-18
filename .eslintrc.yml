@@ -4,6 +4,7 @@ env:
 
 plugins:
   - import
+  - mocha
 
 parser: 'babel-eslint'
 
@@ -43,3 +44,8 @@ rules:
   arrow-body-style: ['error', 'as-needed']
   object-shorthand: ['error', 'properties']
   prefer-template: 'error'
+
+  'mocha/handle-done-callback': 'error'
+  'mocha/no-global-tests': 'error'
+  'mocha/no-mocha-arrows': 'error'
+  'mocha/no-exclusive-tests': 'error'

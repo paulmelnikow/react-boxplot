@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.8.2",
+    "react": "^16.8.3",
     "react-boxplot": "file:..",
     "react-dom": "^16.8.2",
     "react-scripts": "^2.1.5",

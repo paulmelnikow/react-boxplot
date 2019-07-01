@@ -9,7 +9,7 @@
     "react": "^16.8.6",
     "react-boxplot": "file:..",
     "react-dom": "^16.8.6",
-    "react-scripts": "^2.1.5",
+    "react-scripts": "^3.0.1",
     "styled-components": "^4.1.3"
   },
   "scripts": {

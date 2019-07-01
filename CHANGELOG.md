@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.l.0 -- Jan 1, 2019
+
+- Support React 16.8.
+- Upgrade to Babel 7 and Rollup 1.
+- Switch test runner back to Mocha.
+- Update example app.
+
 ## 3.0.1 -- Jan 1, 2019
 
 Fix publishing error from previous.

@@ -64,7 +64,7 @@
     "rollup": "^1.1.2",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.0.0",
     "rollup-plugin-url": "^2.2.2",
     "source-map-support": "^0.5.9"

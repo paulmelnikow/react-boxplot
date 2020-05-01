@@ -150,7 +150,7 @@ const plotAttrs = [
 
 const App = () => (
   <StyledMain>
-    {plotAttrs.map(attrs => [<StyledBoxplot {...attrs} />, <br />])}
+    {plotAttrs.map((attrs, i) => [<StyledBoxplot key={i} {...attrs} />, <br key={i} />])}
   </StyledMain>
 )
 export default App

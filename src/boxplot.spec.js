@@ -2,8 +2,8 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { Boxplot, computeBoxplotStats } from './'
 
-describe('Boxplot', function() {
-  it('renders without crashing', function() {
+describe('Boxplot', function () {
+  it('renders without crashing', function () {
     const attrs = {
       width: 400,
       height: 25,

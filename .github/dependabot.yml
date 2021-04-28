@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: rollup
+    versions:
+    - 2.35.1
+    - 2.38.3
+  - dependency-name: "@babel/preset-react"
+    versions:
+    - 7.12.10
+  - dependency-name: "@babel/register"
+    versions:
+    - 7.12.10
+  - dependency-name: mocha
+    versions:
+    - 8.2.1
+- package-ecosystem: npm
+  directory: "/example"
+  schedule:
+    interval: monthly
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.1
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3

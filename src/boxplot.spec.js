@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { Boxplot, computeBoxplotStats } from './'
+import Boxplot, { computeBoxplotStats } from './'
 
 describe('Boxplot', function () {
   it('renders without crashing', function () {

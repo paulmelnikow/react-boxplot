@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Boxplot, computeBoxplotStats } from 'react-boxplot'
+import Boxplot, { computeBoxplotStats } from 'react-boxplot'
 
 const StyledMain = styled.main`
   background-color: #ddd;

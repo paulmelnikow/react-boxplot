@@ -1,11 +1,11 @@
 # react-boxplot
 
-Simple SVG box plots in React.
+Simple SVG box plots in React
 
-[![version](https://img.shields.io/npm/v/react-boxplot.svg?style=flat-square)][npm]
-[![license](https://img.shields.io/npm/l/react-boxplot.svg?style=flat-square)][npm]
-[![build](https://img.shields.io/circleci/project/github/paulmelnikow/react-boxplot.svg?style=flat-square)][build]
-[![code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)][prettier]
+[![version](https://img.shields.io/npm/v/react-boxplot?style=flat-square)][npm]
+[![license](https://img.shields.io/npm/l/react-boxplot?style=flat-square)][npm]
+[![build](https://img.shields.io/circleci/project/github/paulmelnikow/react-boxplot?style=flat-square)][build]
+[![code style](https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square)][prettier]
 
 [npm]: https://www.npmjs.com/package/react-boxplot
 [build]: https://circleci.com/gh/paulmelnikow/react-boxplot/tree/master
@@ -22,7 +22,7 @@ npm install --save react-boxplot
 
 ```jsx
 import React, { Component } from 'react'
-import { Boxplot, computeBoxplotStats } from 'react-boxplot'
+import Boxplot, { computeBoxplotStats } from 'react-boxplot'
 
 const values = [
   14, 15, 16, 16, 17, 17, 17, 17, 17, 18, 18, 18, 18, 18, 18, 19, 19, 19, 20,
@@ -69,16 +69,16 @@ const Example = () => (
 
 ## Features
 
-- Pure SVG.
-- Horizonal or vertical orientation.
-- The scale of the major axis matches the original data.
+- Pure SVG
+- Horizonal or vertical orientation
+- The coordinate system of the major axis matches the original data
 
 ## Development
 
 In one terminal, start the build for the library:
 
 ```sh
-npm
+npm ci
 npm start
 ```
 
@@ -86,7 +86,7 @@ And, in a second terminal, start the build for the example app:
 
 ```sh
 cd example
-npm
+npm ci
 npm start
 ```
 

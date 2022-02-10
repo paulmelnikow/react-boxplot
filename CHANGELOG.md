@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0 -- Feb 10, 2022
+
+- BREAKING CHANGE: Make Boxplot the default export.
+- Add TypeScript typings.
+- Support React 17.
+
 ## 3.l.0 -- Jan 1, 2019
 
 - Support React 16.8.

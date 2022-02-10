@@ -23,9 +23,8 @@
     "start": "rollup --config --watch",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
-    "now-build:rearrange": "cd dist && mkdir dist example && mv *.js dist && cp -r ../example/build/* example/",
-    "now-build": "npm run build && npm run predeploy && npm run now-build:rearrange",
-    "deploy": "gh-pages -d example/build"
+    "netlify-build:rearrange": "cd dist && mkdir dist example && mv *.js dist && cp -r ../example/build/* example/",
+    "netlify-build": "npm run build && npm run predeploy && npm run netlify-build:rearrange"
   },
   "dependencies": {
     "simple-statistics": "^7.0.0"
@@ -54,7 +53,6 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.6.1",
     "eslint-plugin-standard": "^4.0.0",
-    "gh-pages": "^3.1.0",
     "mocha": "^8.0.1",
     "prettier": "^2.0.5",
     "prettier-check": "^2.0.0",

@@ -24,7 +24,7 @@
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "netlify-build:rearrange": "cd dist && mkdir dist example && mv *.js dist && cp -r ../example/build/* example/",
-    "netlify-build": "npm run build && npm run predeploy && npm run now-build:rearrange"
+    "netlify-build": "npm run build && npm run predeploy && npm run netlify-build:rearrange"
   },
   "dependencies": {
     "simple-statistics": "^7.0.0"

@@ -6,10 +6,13 @@ plugins:
   - import
   - mocha
 
-parser: 'babel-eslint'
+parser: '@babel/eslint-parser'
 
 parserOptions:
   sourceType: 'module'
+  requireConfigFile: false
+  babelOptions:
+    presets: ['@babel/preset-react']
 
 extends:
   - standard
